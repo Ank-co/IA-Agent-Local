@@ -1,4 +1,4 @@
-# Agent IA — Mémoire + RAG + Web (local CPU)
+# 🧠 Agent IA — Mémoire + RAG + Web (local CPU)
 
 Assistant IA **100% local**, tournant sur **CPU**, combinant :
 - **TinyLlama** pour la génération de texte (modèle causal léger)
@@ -9,10 +9,21 @@ Assistant IA **100% local**, tournant sur **CPU**, combinant :
 
 ---
 
-## Installation
+## 🚀 Fonctionnalités principales
 
-###  Créer un environnement virtuel
+- 💬 **Conversation locale** — aucune requête API, tout tourne sur ton CPU
+- 💾 **Mémoire persistante SQLite** — profil, humeurs, souvenirs récents
+- 📚 **RAG (retrieval-augmented generation)** — ingestion et recherche dans des PDF
+- 🌐 **Recherche web optionnelle** — intégration DuckDuckGo
+- 🧠 **TinyLlama 1.1B Chat** — modèle compact et rapide pour la génération locale
+
+---
+
+## 🛠️ Installation
+
+### 1️⃣ Créer un environnement virtuel
 ```bash
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
+
