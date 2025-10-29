@@ -1,0 +1,18 @@
+# Agent IA — Mémoire + RAG + Web (local CPU)
+
+Assistant IA **100% local**, tournant sur **CPU**, combinant :
+- **TinyLlama** pour la génération de texte (modèle causal léger)
+- **MiniLM** pour les embeddings (Sentence-Transformers)
+- **ChromaDB** pour la recherche vectorielle (RAG)
+- **Streamlit** pour l’interface graphique
+- **SQLite** pour la mémoire persistante utilisateur
+
+---
+
+## Installation
+
+###  Créer un environnement virtuel
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt

@@ -1,0 +1,12 @@
+openai
+python-dotenv
+tiktoken
+httpx
+chromadb
+sentence-transformers
+pypdf
+duckduckgo-search
+pandas
+numpy
+matplotlib
+streamlit
