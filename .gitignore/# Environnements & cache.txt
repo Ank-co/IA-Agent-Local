@@ -1,0 +1,21 @@
+# Environnements & cache
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Données locales / index
+data/*
+!data/.gitkeep
+vectorstore/*
+!vectorstore/.gitkeep
+hf_cache/
+brain.db
+
+# Secrets
+.env
+
+# Divers
+.ipynb_checkpoints/
+models/*
+!models/.gitkeep
