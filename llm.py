@@ -2,10 +2,8 @@ import os
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 import torch
 
-# ==============================
-# 🔧 Configuration modèle
-# ==============================
 
+# Configuration modèle
 MODEL_ID = os.getenv("LOCAL_MODEL", "TinyLlama/TinyLlama-1.1B-Chat-v1.0")
 HF_HOME = os.getenv("HF_HOME")  # ex: "E:\\IA MSX.1\\hf_cache" ou clé USB
 OFFLINE = os.getenv("TRANSFORMERS_OFFLINE", "0") == "1"
@@ -18,10 +16,8 @@ except Exception:
 
 torch.set_grad_enabled(False)
 
-# ==============================
-# 🚀 Chargement modèle/tokenizer
-# ==============================
 
+# Chargement modèle/tokenizer
 # important : on force cache_dir + offline/local
 tokenizer = AutoTokenizer.from_pretrained(
     MODEL_ID,
@@ -38,10 +34,8 @@ model = AutoModelForCausalLM.from_pretrained(
     local_files_only=OFFLINE or os.path.isabs(MODEL_ID),
 )
 
-# ==============================
-# ⚙️ Réglages rapides
-# ==============================
 
+# Réglages rapides
 MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "120"))
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.4"))
 
@@ -56,20 +50,16 @@ _gen = pipeline(
     top_p=0.95,
 )
 
-# ==============================
-# 💬 Prompt système
-# ==============================
 
+# Prompt système
 SYSTEM_BASE = (
     "Tu es un assistant curieux, tu veux apprendre pour conseiller à l'avenir. "
     "Réponds en français en 2 à 4 phrases maximum. "
     "Quand des documents/contexte sont fournis, appuie-toi dessus."
 )
 
-# ==============================
-# 🧠 Fonctions principales
-# ==============================
 
+# Fonctions principales
 def _build_prompt(user_msg: str, context: str, docs: list[str], web: str) -> str:
     parts = [f"<|system|>\n{SYSTEM_BASE}"]
     ctx_parts = []
