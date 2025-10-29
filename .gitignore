@@ -4,7 +4,7 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Données locales / index
+# Données locales
 data/*
 !data/.gitkeep
 vectorstore/*
